@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ace Kitchen Sink</title>
+    <meta name="author" content="Fabian Jakobs">
+    <!--
+    Ace
+      version 1.2.7
+      commit  9200b313b9923abc28c40cf597571106328de4a0
+    -->
+
+    <link rel="stylesheet" href="demo/kitchen-sink/styles.css" type="text/css" media="screen" charset="utf-8">
+    
+    <script async="true" src="https://use.edgefonts.net/source-code-pro.js"></script>
+    
+
+    <link href="./doc/site/images/favicon.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="optionsPanel" style="position:absolute;height:100%;width:260px">
+  
+  <div style="position: absolute; overflow: hidden; top:100px; bottom:0">
+  <div style="width: 120%; height:100%; overflow-y: scroll">
+
+  <table id="controls">
+    <tr>
+      <td >
+        <label for="mode">Mode Styling</label>
+      </td><td>
+        <select id="mode" size="1">
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="doc">SaveAs Filetypes</label>
+      </td><td>
+        <select id="doc" size="1">
+        </select>
+      </td>
+    </tr>
+   
+    <tr><td colspan="2">
+    <table id="more-controls">
+    <tr>
+      <td>
+        <label for="select_style">This is a test checkbox</label>
+      </td><td>
+        <input type="checkbox" name="select_style" id="select_style" checked>
+      </td>
+    </tr>
+    </tr><td colspan="2">
+        <input type="button" value="Add Text Area" onclick="this.parentNode.replaceChild(
+          document.createElement('textarea'), this
+        )">
+      </td>
+    </tr>
+  </table>
+  </td></tr>
+</table>
+  
+  </div>
+  </div>
+</div>
+  <div id="editor-container"></div>
+  
+  <script src="src/ace.js" data-ace-base="src" type="text/javascript" charset="utf-8"></script>
+  <script src="src/keybinding-vim.js"></script>
+  <script src="src/keybinding-emacs.js"></script>
+  <script src="demo/kitchen-sink/demo.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    require("kitchen-sink/demo");
+  </script>
+    
+</body>
+</html>
