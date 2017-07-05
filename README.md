@@ -2,6 +2,15 @@ Ace (Ajax.org Cloud9 Editor)
 ============================
 [![CDNJS](https://img.shields.io/cdnjs/v/ace.svg)](https://cdnjs.com/libraries/ace)
 
+
+
+This is the modified version to completely run in browser, platform agnostic 
+
+
+
+
+--gitignore the rest--
+
 Ace is a code editor written in JavaScript.
 
 This repository has only generated files.
