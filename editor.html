@@ -21,7 +21,10 @@
     </div>
     <div class="option-item">
         <label for="mode">Mode Styling</label>
-        <select id="mode" size="1"></select>
+        <select id="mode" size="1" onchange="changeModeTo(this)">
+            <option value="javascript">Javascript</option>
+            <option value="python">Python</option>
+        </select>
     </div>
     <div class="option-item">
         <label for="doc">SaveAs Filetypes</label>
@@ -49,6 +52,11 @@
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/solarized_light");
     editor.session.setMode("ace/mode/javascript");
+
+    var changeModeTo = function(mode) {
+        editor.session.setMode("ace/mode/" + mode.value);
+    }
+
 </script>
 
 </body>
