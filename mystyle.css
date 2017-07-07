@@ -23,7 +23,7 @@ body {
     top: 5px;
     bottom 0;
     right 25vw;
-    left 0;
+    left: 0;
     
     max-width: 25vw;
 }
@@ -42,10 +42,15 @@ select {
 
 .whatever {
     display: block;
-    text-align: left;
-       
+    text-align: center;
+    margin: 5px;
 }
 
 .option-item {
     display: list-item;
+    margin: 2px;
+}
+
+.option-item-cent {
+    text-align: left;
 }

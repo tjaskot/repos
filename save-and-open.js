@@ -1,6 +1,7 @@
 function saveTextAsFile()
 {
-    var textToSave = document.getElementById("inputTextToSave").value;
+    
+    var textToSave = 'extractedvals';
     var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
     var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
