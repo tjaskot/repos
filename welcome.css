@@ -1,0 +1,54 @@
+html {
+    height: 100%
+    width: 100%
+    overflow: hidden;
+}
+body {
+    overflow: hidden;
+}
+#Background-Container {
+    width: 50vw;
+    height: 300px;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    
+    border: 3px solid black;
+    padding: 30px;
+    margin: 25px;
+    background-color: navy;
+    color: white;
+    font-size: 160%;
+    text-align: center;
+    box-shadow: 3px 3px 5px 6px #ccc;
+}
+#Background-Container span{
+    display: block;
+    background-image: url("shine.png");
+    background-position: -310px -50px;
+    background-repeat: no-repeat;
+    
+    -webkit-transition-property: all;
+    -webkit-transition-duration: .5s;
+    
+    height: 100%;
+    width: 100%;
+}
+#Background-Container:hover span {
+    background-position: 400px 400px;
+}
+#Input-Container {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    position: absolute;
+    height: 200px;
+    width: 50vw;
+    top: 25%
+}
+.Option-Item {
+    font-size: 20px;
+}
+.Option-Item-Cent {
+    font-size: 20px;
+}
