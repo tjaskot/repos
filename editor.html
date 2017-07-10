@@ -8,9 +8,7 @@
 </head>
 <body>
 
-<pre id="editor">{
-    i'm editing this so suck it up...i++
-}</pre>
+<pre id="editor"></pre>
 
 <div id="options-panel" class="whatever">
     <div class="option-item">
@@ -40,13 +38,16 @@
             <input type="file" id="fileToLoad"></input>
         </div>
         <div class="option-item-cent">
-            <input type="button" onclick="loadFileAsText()" value="Load Selected File"></button>
+            <input type="button" onclick="load()" value="Load Selected File"></button>
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
-
+    var fileContents = localStorage.getItem("file");
+    document.getElementById("editor").textContent = fileContents;
+    console.log(fileContents);
+    localStorage.removeItem("file");
 </script>
 <script src="src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="save-and-open.js" type="text/javascript"></script>
@@ -60,6 +61,12 @@
     editor.session.setMode("ace/mode/" + mode.value);
     
 </script>
-
+<script type="text/javascript">
+    function load(){
+        loadFileAsText();
+        ace.edit("fileedit");
+        
+    }
+</script>
 </body>
 </html>
