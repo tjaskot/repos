@@ -1,7 +1,10 @@
+/* This is CHANGEMODETO.JS */
+
 function changeModeTo(mode) {
         editor.session.setMode("ace/mode/" + mode.value);
+        // this tests the console for output of setMode
+        //console.log("mode");
     }
-    
     
 function loadCSV(fileExt) {
     /*Load ajax http request*/
@@ -28,10 +31,12 @@ function loadCSV(fileExt) {
                 /*append newly created Option to Mode DropDown*/
                 parentNode = document.getElementById("mode");
                 parentNode.appendChild(optionNode);
-                console.log("option added");
+                //this verifies optionNode
+                //console.log("option added");
             }
         findMode(fileExt);
-        console.log("findMode ran");
+        //verifies findMode
+        //console.log("findMode ran");
         }
     };
     //ajax request to Open csv file 

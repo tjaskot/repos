@@ -1,58 +1,10 @@
 html {
-    height: 100%;
-    width: 100%;
+    height: 100%
+    width: 100%
     overflow: hidden;
-}    
-
+}
 body {
     overflow: hidden;
-}
-
-#editor {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 25vw;
-    
-    margin: 0;
-}
-
-#options-panel {
-    position: fixed;
-    top: 5px;
-    bottom: 0;
-    right: 25vw;
-    left: 0;
-    
-    max-width: 25vw;
-}
-
-button:hover,
-.pointer-on-hover:hover,
-.button:hover,
-input[type="button"]:hover{
-    cursor: pointer;
-    background: yellow;
-}
-
-select {
-    background: yellow; 
-}
-
-.whatever {
-    display: block;
-    text-align: center;
-    margin: 5px;
-}
-
-.option-item {
-    display: list-item;
-    margin: 2px;
-}
-
-.option-item-cent {
-    text-align: left;
 }
 #Background-Container {
     width: 50vw;
@@ -94,6 +46,9 @@ select {
     width: 50vw;
     top: 25%
 }
-.Welc-Option-Item {
+.Option-Item {
+    font-size: 20px;
+}
+.Option-Item-Cent {
     font-size: 20px;
 }
