@@ -25,6 +25,7 @@ function destroyClickedElement(event)
 function loadFileAsText()
 {
     var fileName = document.getElementById("fileToLoad").files[0];
+    var fileExt = fileName.name.split('.')[1];
     fileReader = new FileReader();
     var fileContents;
     fileReader.onload = function () {
@@ -33,6 +34,7 @@ function loadFileAsText()
     }
     fileReader.onloadend = function(evt) {
 	localStorage.setItem("file", fileContents);
+	localStorage.setItem("fileExt", fileExt);
 	window.open("editor.html", "_self");
     }
     fileReader.readAsText(fileName, "utf-8");

@@ -1,10 +1,9 @@
 function changeModeTo(mode) {
         editor.session.setMode("ace/mode/" + mode.value);
-//        editor.session.setMode("ace/mode/python");
     }
     
     
-function loadCSV() {
+function loadCSV(fileExt) {
     /*Load ajax http request*/
     var xhttp = new XMLHttpRequest();
     xhttp.overrideMimeType('text/plain');
@@ -29,10 +28,31 @@ function loadCSV() {
                 /*append newly created Option to Mode DropDown*/
                 parentNode = document.getElementById("mode");
                 parentNode.appendChild(optionNode);
+                console.log("option added");
             }
+        findMode(fileExt);
+        console.log("findMode ran");
         }
     };
     //ajax request to Open csv file 
     xhttp.open("GET", "Modes.csv", true);
     xhttp.send();
+}
+
+function findMode(fileExt) {
+    switch (fileExt) {
+        case "py": 
+            fileExt = "python";
+            break;
+        case "js": 
+            fileExt = "javascript";
+            break;
+        case "txt":
+            fileExt = "plain_text";
+            break;
+        default: 
+            fileExt;
+    }
+    document.getElementById("mode").value = fileExt;
+    document.getElementById("mode").click();
 }
