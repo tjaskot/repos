@@ -1,5 +1,6 @@
-function changeMode(mode) {
+function changeModeTo(mode) {
         editor.session.setMode("ace/mode/" + mode.value);
+//        editor.session.setMode("ace/mode/python");
     }
     
     
