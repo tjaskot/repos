@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Welcome</title>
-    <link rel="stylesheet" type="text/css" href="welcome.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="mystyle.css" charset="utf-8">
 </head>
 <body>
 <div id="Background-Container" class="container">
@@ -13,14 +13,14 @@
             --WELCOME--<br/>
     </span>
     <div id="Input-Container"> <p></p>
-        <div class="Option-Item">
+        <div class="Welc-Option-Item">
             <label for="fileToLoad">Select 'Browse' To Load A File:</label>
         </div>
-        <div class="Option-Item-Cent">
-            <input type="file" id="fileToLoad"></input>
+        <div class="Welc-Option-Item">
+            <input type="file" id="fileToLoad">
         </div>
-        <div class="Option-Item-Cent">
-            <input type="button" onclick="initialFileLoad()" value="Load Selected File"></button>
+        <div class="Welc-Option-Item">
+            <input type="button" onclick="initialFileLoad()" value="Load Selected File">
         </div>
     </div>
 </div>
@@ -31,7 +31,7 @@
         var fileContents;
         fileReader.onload = function () {
             fileContents = fileReader.result;
-            console.log(fileContents);
+//            console.log(fileContents);
         }
         fileReader.onloadend = function(evt) {
             localStorage.setItem("file", fileContents);
