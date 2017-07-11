@@ -19,7 +19,7 @@
     </div>
     <div class="option-item">
         <label for="mode">Mode Styling</label>
-        <select id="mode" size="1" onclick="changeModeTo(this)">
+        <select id="mode" size="1" onclick="changeModeTo()">
         </select>
     </div>
     <div class="option-item">
@@ -30,7 +30,7 @@
           document.createElement('textarea'), this)">
     </div>
     <div class="option-item">
-        <input type="button" onclick="saveTextAsFile()" value="Save File">
+        <input type="button" value="Save File" onclick="saveFile()">
     </div>
     <div class="option-item">
         <label for="fileToLoad">Select 'Browse' To Load A File:</label>
@@ -58,17 +58,19 @@
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/solarized_light");
-
     loadCSV(fileExt);
     localStorage.removeItem("fileExt");
-
 </script>
 <script type="text/javascript">
     function load(){
         loadFileAsText();
         ace.edit("fileedit");
-        
     }
+</script>
+<script>
+    var saveFile = function(name, file, ext) {
+	    saveAs(file, name + ext);
+	};
 </script>
 </body>
 </html>
