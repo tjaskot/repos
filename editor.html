@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- This is EDITOR.HTML -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Editor</title>
@@ -12,24 +11,18 @@
 <pre id="editor"></pre>
 
 <div id="options-panel" class="whatever">
-    <div class="option-item">
-        <input id="click-button" type="button" value="Click Me!">
-    </div>
-    <div class="option-item">
-        <input type="button" value="Don't click me =(">
-    </div>
+    <div class="badge"></div>
     <div class="option-item">
         <label for="mode">Mode Styling</label>
         <select id="mode" size="1" onclick="changeModeTo(this)">
         </select>
     </div>
-    <div class="option-item">
-        <label for="doc">""</label>
+    <div class="option=item">
+        <label for="theme">Theme</label>
+        <select id="theme" size="1" onclick="changeThemeTo(this)">
+        </select>
     </div>
-    <div class="option-item">
-        <input type="button" value="Add Text Area" onclick="this.parentNode.replaceChild(
-          document.createElement('textarea'), this)">
-    </div>
+    <br /><br />
     <div class="option-item">
         <input id="saveButton" type="button" value="Save File">
     </div>
@@ -41,7 +34,7 @@
             <input type="file" id="fileToLoad">
         </div>
         <div class="option-item-cent">
-            <input type="button" onclick="load()" value="Load Selected File">
+            <input type="button" onclick="loadFileAsText()" value="Load Selected File">
         </div>
     </div>
 </div>
@@ -59,19 +52,14 @@
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/solarized_light");
+
     loadCSV(fileExt);
     localStorage.removeItem("fileExt");
 </script>
-<script type="text/javascript">
-    function load(){
-        loadFileAsText();
-        ace.edit("fileedit");
-    }
-</script>
 <script>
-    var saveFile = function(name, file, ext) {
-	    saveAs(file, name + ext);
-	};
+    var saveFile = function(name, file, ext){
+        saveAs(file, name + ext);
+    };
 </script>
 </body>
 </html>
