@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- this is EDITOR.HTML-->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Editor</title>
@@ -8,7 +9,8 @@
 </head>
 <body>
 
-<pre id="editor"></pre>
+<pre id="editor">
+</pre>
 
 <div id="options-panel" class="whatever">
     <div class="badge"></div>
@@ -52,9 +54,9 @@
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/solarized_light");
-
-    loadCSV(fileExt);
-    localStorage.removeItem("fileExt");
+    //calls the Themes and Modes and sets them to browser
+    //function call goes here
+    callCsvs()
 </script>
 <script>
     var saveFile = function(name, file, ext){

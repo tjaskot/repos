@@ -5,8 +5,19 @@ function changeModeTo(mode) {
         // this tests the console for output of setMode
         //console.log("mode");
     }
-    
-function loadCSV(fileExt) {
+
+//need to make function here
+function callCsvs() {
+    listOfItems = ["Modes.csv", "Themes.csv"];
+    listOfItemsID = ["mode", "theme"];
+    for (var i = 0; i <= listOfItems.length-1; i++) {
+        var csvFile = listOfItems[i]; 
+        loadCSV(fileExt, csvFile);
+        localStorage.removeItem("fileExt");
+    }
+}
+
+function loadCSV(fileExt, csvFile) {
     /*Load ajax http request*/
     var xhttp = new XMLHttpRequest();
     xhttp.overrideMimeType('text/plain');
@@ -28,8 +39,15 @@ function loadCSV(fileExt) {
                 optionNode.value = splitLine[0].replace('"', "");
                 optionNode.text = splitLine[1].replace('"', "");
                 
+                //create variable for passing the csv File ID (can add more csv files by creating elseIf)
+                var csvFileID = "";
+                if (csvFile == "Modes.csv"){
+                    csvFileID = "mode";
+                }
+                else (csvFileID = "theme");
+                
                 /*append newly created Option to Mode DropDown*/
-                parentNode = document.getElementById("mode");
+                parentNode = document.getElementById(csvFileID);
                 parentNode.appendChild(optionNode);
                 //this verifies optionNode
                 //console.log("option added");
@@ -40,7 +58,7 @@ function loadCSV(fileExt) {
         }
     };
     //ajax request to Open csv file 
-    xhttp.open("GET", "Modes.csv", true);
+    xhttp.open("GET", csvFile, true);
     xhttp.send();
 }
 
