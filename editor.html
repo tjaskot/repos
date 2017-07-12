@@ -9,8 +9,7 @@
 </head>
 <body>
 
-<pre id="editor">
-</pre>
+<pre id="editor"></pre>
 
 <div id="options-panel" class="whatever">
     <div class="badge"></div>
@@ -26,7 +25,11 @@
     </div>
     <br /><br />
     <div class="option-item">
-        <input id="saveButton" type="button" value="Save File">
+        <label for="fileNamed">File Name</label>
+        <textarea id="fileNamed"></textarea>
+    </div>
+    <div class="option-item">
+        <a href="#" download="file.html" id="saveButton">Save File</a>
     </div>
     <div class="option-item">
         <label for="fileToLoad">Select 'Browse' To Load A File:</label>
@@ -44,9 +47,11 @@
 <script type="text/javascript">
     var fileContents = localStorage.getItem("file");
     var fileExt = localStorage.getItem("fileExt");
+    var fileNamed = localStorage.getItem("fileNamed");
     document.getElementById("editor").textContent = fileContents;
-//    console.log(fileContents);
+    document.getElementById("fileNamed").value += fileNamed;
     localStorage.removeItem("file");
+    localStorage.removeItem("fileNamed");
 </script>
 <script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="save-and-open.js" type="text/javascript"></script>
@@ -57,11 +62,8 @@
     //calls the Themes and Modes and sets them to browser
     //function call goes here
     callCsvs()
-</script>
-<script>
-    var saveFile = function(name, file, ext){
-        saveAs(file, name + ext);
-    };
+    
+//    loadCSV(fileExt);
 </script>
 </body>
 </html>

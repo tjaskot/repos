@@ -1,12 +1,11 @@
 /* This is CHANGEMODETO.JS */
 
 function changeModeTo(mode) {
-        editor.session.setMode("ace/mode/" + mode.value);
-        // this tests the console for output of setMode
-        //console.log("mode");
-    }
+    editor.session.setMode("ace/mode/" + mode.value);
+    // this tests the console for output of setMode
+    //console.log("mode");
+}
 
-//need to make function here
 function callCsvs() {
     listOfItems = ["Modes.csv", "Themes.csv"];
     listOfItemsID = ["mode", "theme"];
@@ -16,7 +15,7 @@ function callCsvs() {
         localStorage.removeItem("fileExt");
     }
 }
-
+    
 function loadCSV(fileExt, csvFile) {
     /*Load ajax http request*/
     var xhttp = new XMLHttpRequest();
@@ -49,16 +48,13 @@ function loadCSV(fileExt, csvFile) {
                 /*append newly created Option to Mode DropDown*/
                 parentNode = document.getElementById(csvFileID);
                 parentNode.appendChild(optionNode);
-                //this verifies optionNode
-                //console.log("option added");
+
             }
         findMode(fileExt);
-        //verifies findMode
-        //console.log("findMode ran");
         }
     };
     //ajax request to Open csv file 
-    xhttp.open("GET", csvFile, true);
+    xhttp.open("GET", "Modes.csv", true);
     xhttp.send();
 }
 
