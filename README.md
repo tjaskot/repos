@@ -1,3 +1,5 @@
+*** FIREFOX or CHROME ONLY ***
+
 This editor has integrated Ace (the completely online facing text editor)
 
 There are multiple functionalities for this editor.
