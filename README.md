@@ -1,4 +1,4 @@
-*** FIREFOX or CHROME ONLY ***
+*** FIREFOX or CHROME ONLY *** (because of eventlisteners)
 
 This editor has integrated Ace (the completely online facing text editor)
 
