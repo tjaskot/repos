@@ -33,17 +33,17 @@ button:hover,
 .button:hover,
 input[type="button"]:hover{
     cursor: pointer;
-    background: yellow;
+    background: LemonChiffon;
 }
 
 select {
-    background: yellow; 
+    background: LemonChiffon; 
 }
 
 .whatever {
     display: block;
-    text-align: center;
     margin: 5px;
+    font-size: 14px;
 }
 
 .option-item {
@@ -53,6 +53,28 @@ select {
 
 .option-item-cent {
     text-align: left;
+}
+.linkButton {
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+.linkButton:hover {
+    cursor: pointer;
+    background: LemonChiffon;
+}
+label {
+    display: inline-block;
+    width: 100px;
+}
+.longLabel {
+    width: 200px;
 }
 #Background-Container {
     width: 50vw;

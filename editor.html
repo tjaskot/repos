@@ -14,25 +14,26 @@
 <div id="options-panel" class="whatever">
     <div class="badge"></div>
     <div class="option-item">
-        <label for="mode">Mode Styling</label>
+        <label for="mode">Mode Styling:</label>
         <select id="mode" size="1" onclick="changeModeTo(this)">
         </select>
     </div>
     <div class="option=item">
-        <label for="theme">Theme</label>
+        <label for="theme">Editor Theme:</label>
         <select id="theme" size="1" onclick="changeThemeTo(this)">
         </select>
     </div>
     <br /><br />
     <div class="option-item">
-        <label for="fileNamed">File Name</label>
+        <label for="fileNamed" class="longLabel">File Name to Save As:</label>
         <textarea id="fileNamed"></textarea>
     </div>
     <div class="option-item">
-        <a href="#" download="file.html" id="saveButton">Save File</a>
+        <a href="#" download="file.html" id="saveButton" class="linkButton">Save File</a>
     </div>
+    <br /><br/>
     <div class="option-item">
-        <label for="fileToLoad">Select 'Browse' To Load A File:</label>
+        <label for="fileToLoad" class="longLabel">Select 'Browse' To Load A File:</label>
     </div>
     <div class="option-item">
         <div class="option-item-cent">
@@ -58,7 +59,6 @@
 <script src="changeModeTo.js" type="text/javascript"></script>
 <script>
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/solarized_light");
     //calls the Themes and Modes and sets them to browser
     //function call goes here
     callCsvs()

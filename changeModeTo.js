@@ -1,4 +1,4 @@
-/* This is CHANGEMODETO.JS */
+/*This is CHANGEMODETO.JS */
 
 function changeModeTo(mode) {
     editor.session.setMode("ace/mode/" + mode.value);
@@ -6,17 +6,22 @@ function changeModeTo(mode) {
     //console.log("mode");
 }
 
+function changeThemeTo(theme){
+    editor.setTheme("ace/theme/" + theme.value);
+}
+
 function callCsvs() {
     listOfItems = ["Modes.csv", "Themes.csv"];
     listOfItemsID = ["mode", "theme"];
     for (var i = 0; i <= listOfItems.length-1; i++) {
-        var csvFile = listOfItems[i]; 
-        loadCSV(fileExt, csvFile);
-        localStorage.removeItem("fileExt");
+        var csvFile = listOfItems[i];
+        var csvFileID = listOfItemsID[i];
+        loadCSV(fileExt, csvFile, csvFileID);
     }
+    localStorage.removeItem("fileExt");
 }
     
-function loadCSV(fileExt, csvFile) {
+function loadCSV(fileExt, csvFile, csvFileID) {
     /*Load ajax http request*/
     var xhttp = new XMLHttpRequest();
     xhttp.overrideMimeType('text/plain');
@@ -38,13 +43,6 @@ function loadCSV(fileExt, csvFile) {
                 optionNode.value = splitLine[0].replace('"', "");
                 optionNode.text = splitLine[1].replace('"', "");
                 
-                //create variable for passing the csv File ID (can add more csv files by creating elseIf)
-                var csvFileID = "";
-                if (csvFile == "Modes.csv"){
-                    csvFileID = "mode";
-                }
-                else (csvFileID = "theme");
-                
                 /*append newly created Option to Mode DropDown*/
                 parentNode = document.getElementById(csvFileID);
                 parentNode.appendChild(optionNode);
@@ -54,7 +52,7 @@ function loadCSV(fileExt, csvFile) {
         }
     };
     //ajax request to Open csv file 
-    xhttp.open("GET", "Modes.csv", true);
+    xhttp.open("GET", csvFile, true);
     xhttp.send();
 }
 
@@ -69,8 +67,8 @@ function findMode(fileExt) {
         case "txt":
             fileExt = "plain_text";
             break;
-        default: 
-            fileExt;
+	default:
+	    fileExt;
     }
     document.getElementById("mode").value = fileExt;
     document.getElementById("mode").click();
