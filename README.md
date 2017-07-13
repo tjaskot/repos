@@ -8,7 +8,7 @@ To open a file you must Select the "Browse" button, and then Select the "Load Se
   This loads your file into the Ace-Line layer object (under inspect element it will show as "ace-layer ace-text-layer")
   
 Download the file from here and you have a packaged editor for public use.
-=====================
+=
 [![CDNJS](https://img.shields.io/cdnjs/v/ace.svg)](https://cdnjs.com/libraries/ace)
 
 There are 4 pre-built versions of the filess for convenience of embedding.
