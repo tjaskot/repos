@@ -11,7 +11,7 @@ To open a file you must Select the "Browse" button, and then Select the "Load Se
   
 Download the file from here and you have a packaged editor for public use.
 =
-[![version](https://img.shields.io/badge/style-plastic-green.svg?style=plastic)]()
+[![version](https://img.shields.io/badge/version-0.1-green.svg?style=plastic)]()
 
 There are 4 pre-built versions of the filess for convenience of embedding.
 it contains 4 versions
