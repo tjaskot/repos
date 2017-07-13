@@ -5,7 +5,7 @@ document.getElementById("saveButton").onclick = function(){
     for (i=0;i<text.length;i++){
         fullText += text[i].innerText + "\r\n";
     }
-    var data = new Blob([fullText], {type: 'text/plain'});
+    var data = new Blob([fullText], {type: 'application/octet-stream'});
     // If we are replacing a previously generated file we need to
     // manually revoke the object URL to avoid memory leaks.
     if (textFile !== null) {
