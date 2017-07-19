@@ -1,8 +1,6 @@
 language: node_js
-sudo: false
+
+script: "sudo $(type -P npm) test"
+
 node_js:
   - "iojs"
-install: 
-  - npm install
-script:
-  - npm test
