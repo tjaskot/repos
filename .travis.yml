@@ -1,4 +1,4 @@
-language: javascript
+language: java
 rvm:
   - 0.1
   
