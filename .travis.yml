@@ -1,4 +1,4 @@
-language: java
-rvm:
-  - 0.1
+language: node_js
+node_js:
+  - "iojs"
   
