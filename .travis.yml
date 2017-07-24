@@ -1,6 +1,4 @@
-language: node_js
+language: javascript
 
-script: "sudo $(type -P npm) test"
-
-node_js:
-  - "iojs"
+script:
+  - nosetests
